@@ -1,13 +1,18 @@
 package base;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import pages.MainPage;
+import pages.NewPastePage;
 
 public class Base {
-    public String mainPageURL = "https://pastebin.com/";
+    public static String mainPageURL = "https://pastebin.com/";
+
+    public MainPage mainPage;
+    public NewPastePage newPastePage;
 
     public WebDriver driver;
     public Base(WebDriver driver){
         this.driver = driver;
     }
+
 }
