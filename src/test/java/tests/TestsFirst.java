@@ -1,34 +1,27 @@
 package tests;
 
+import base.Base;
+import base.Variables;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import pages.MainPage;
 
-public class TestsFirst {
-    private WebDriver driver;
-    private MainPage mainPage;
-    private static final String EXPECTED_RESULT = "NOTE:";
+public class TestsFirst extends Variables {
+
+    String newPaste = "Hello from WebDrive";
+    String pasteTitleName = "helloweb";
 
     @Before
-    public void setUp() {
-        driver = new ChromeDriver();
-        mainPage = new MainPage(driver);
-        driver.get(mainPage.mainPageURL);
+    public void setUp(){
+        driver.get(Base.mainPageURL);
     }
 
     @Test
     public void createNewPaste(){
-        String newPaste = "Hello from WebDrive";
-        String pasteTitleName = "helloweb";
-
-        mainPage.createPaste(newPaste,pasteTitleName,driver);
-
-        String actualResult = mainPage.readResultText();
-        Assert.assertEquals("Unexpected result:", EXPECTED_RESULT, actualResult);
+        mainPage.createPasteTenMinutes(newPaste,pasteTitleName);
+        String actualResult = newPastePage.readNewPasteTitle();
+        Assert.assertEquals("Unexpected result:", pasteTitleName, actualResult);
     }
 
     @After

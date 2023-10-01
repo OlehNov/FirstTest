@@ -11,33 +11,33 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class MainPage extends Base {
-    String url;
-    public MainPage(WebDriver driver){
-        super(driver);
-        this.url = mainPageURL;
-        PageFactory.initElements(driver, this);
-    }
 
     // ***Locators and selectors***
-    private final String optionalPasteSettingsPanel = ".post-form__left >:nth-child";
 
     //CSS
     @FindBy(css = ".form-group.field-postform-text.required #postform-text")
     private WebElement newPasteField;
-    @FindBy(css = optionalPasteSettingsPanel + "(4) .select2" )
+    @FindBy(css = ".post-form__left .field-postform-expiration .select2" )
     private WebElement pasteExpirationDropdownListButton;
-    @FindBy(css = optionalPasteSettingsPanel + "(9) .form-control")
+    @FindBy(css = ".post-form__left .field-postform-name #postform-name")
     private WebElement pasteNameField;
     @FindBy(css=".form-group.form-btn-container .btn")
     private WebElement createNewPasteButton;
-    @FindBy(css = ".select2-results__options :nth-child(3)")
+    @FindBy(css = " .select2-results__options :nth-child(3)")
     private WebElement pasteExpirationTenMinutesOption;
-    @FindBy(css=".post-view.js-post-view .notice.-success.-post-view >:nth-child(1)")
-    private WebElement successNOTE;
+    @FindBy(css=".form-group.field-postform-format .select2-selection__arrow")
+    private WebElement highlighting;
+    @FindBy(css = ".select2-results__options.select2-results__options--nested > :first-child")
+    private WebElement bashHighlighting;
+
+    public MainPage(WebDriver driver){
+        super(driver);
+        PageFactory.initElements(driver, this);
+    }
 
 
     //Actions
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     public void enterNewPasteText(String pasteTitleName){
         wait.until(ExpectedConditions.elementToBeClickable(newPasteField)).sendKeys(pasteTitleName);
         System.out.println("Text entered into the New Paste");
@@ -63,13 +63,33 @@ public class MainPage extends Base {
         System.out.println("Button was clicked success");
     }
 
-    public String readResultText(){
-        return wait.until(ExpectedConditions.elementToBeClickable(successNOTE)).getText();
+    public void syntaxHighlightingClick(){
+        wait.until(ExpectedConditions.elementToBeClickable(highlighting)).click();
+        System.out.println("Highlighting button was clicked success");
     }
 
-    public void createPaste(String newPaste, String pasteTitleName, WebDriver driver){
+    public void bashHighlightingClick(){
+        wait.until(ExpectedConditions.elementToBeClickable(bashHighlighting)).click();
+        System.out.println("Bash option was clicked success");
+    }
+
+
+
+    //
+    public void createPasteTenMinutes(String newPaste, String pasteTitleName){
         MainPage mainPage = new MainPage(driver);
         mainPage.enterNewPasteText(newPaste);
+        mainPage.pasteExpirationClick();
+        mainPage.tenMinutesOptionClick();
+        mainPage.enterTitleNameText(pasteTitleName);
+        mainPage.clickCreateNewPasteButton();
+    }
+
+    public void createPasteBashTenMinutes(String newPaste, String pasteTitleName){
+        MainPage mainPage = new MainPage(driver);
+        mainPage.enterNewPasteText(newPaste);
+        mainPage.syntaxHighlightingClick();
+        mainPage.bashHighlightingClick();
         mainPage.pasteExpirationClick();
         mainPage.tenMinutesOptionClick();
         mainPage.enterTitleNameText(pasteTitleName);
