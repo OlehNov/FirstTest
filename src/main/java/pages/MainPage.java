@@ -73,8 +73,6 @@ public class MainPage extends Base {
         System.out.println("Bash option was clicked success");
     }
 
-
-
     //
     public void createPasteTenMinutes(String newPaste, String pasteTitleName){
         MainPage mainPage = new MainPage(driver);
@@ -82,17 +80,12 @@ public class MainPage extends Base {
         mainPage.pasteExpirationClick();
         mainPage.tenMinutesOptionClick();
         mainPage.enterTitleNameText(pasteTitleName);
-        mainPage.clickCreateNewPasteButton();
     }
 
     public void createPasteBashTenMinutes(String newPaste, String pasteTitleName){
         MainPage mainPage = new MainPage(driver);
-        mainPage.enterNewPasteText(newPaste);
         mainPage.syntaxHighlightingClick();
         mainPage.bashHighlightingClick();
-        mainPage.pasteExpirationClick();
-        mainPage.tenMinutesOptionClick();
-        mainPage.enterTitleNameText(pasteTitleName);
-        mainPage.clickCreateNewPasteButton();
+        createPasteTenMinutes(newPaste,pasteTitleName);
     }
 }

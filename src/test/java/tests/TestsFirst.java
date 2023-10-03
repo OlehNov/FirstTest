@@ -20,6 +20,7 @@ public class TestsFirst extends Variables {
     @Test
     public void createNewPaste(){
         mainPage.createPasteTenMinutes(newPaste,pasteTitleName);
+        mainPage.clickCreateNewPasteButton();
         String actualResult = newPastePage.readNewPasteTitle();
         Assert.assertEquals("Unexpected result:", pasteTitleName, actualResult);
     }

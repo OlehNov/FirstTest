@@ -5,7 +5,6 @@ import base.Variables;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import pages.MainPage;
 
 
 public class TestsSecond extends Variables {
@@ -18,14 +17,12 @@ public class TestsSecond extends Variables {
     String expirationType = "Bash";
 
     @Before
-    public void setUp(){
-        driver.get(Base.mainPageURL);
-    }
+    public void setUp(){driver.get(Base.mainPageURL);}
     @Test
 
     public void creatAndCheckNewPaste(){
-        MainPage mainPage = new MainPage(driver);
         mainPage.createPasteBashTenMinutes(codeToPast,pasteTitleName);
+        mainPage.clickCreateNewPasteButton();
         newPastePage.fullTextCheck(pasteTitleName, expirationType, codeToPast);
     }
 
