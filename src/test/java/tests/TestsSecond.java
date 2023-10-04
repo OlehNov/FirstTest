@@ -5,6 +5,7 @@ import base.Variables;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.WebElement;
 
 
 public class TestsSecond extends Variables {
@@ -15,13 +16,15 @@ public class TestsSecond extends Variables {
             git push origin master --force""";
     String pasteTitleName = "how to gain dominance among developers";
     String expirationType = "Bash";
+    WebElement syntax = mainPage.bashHighlighting;
+    WebElement pasteExpiration = mainPage.pasteExpirationTenMinutesOption;
 
     @Before
     public void setUp(){driver.get(Base.mainPageURL);}
     @Test
 
     public void creatAndCheckNewPaste(){
-        mainPage.createPasteBashTenMinutes(codeToPast,pasteTitleName);
+        mainPage.createPasteBashTenMinutes(codeToPast,pasteTitleName,pasteExpiration,syntax);
         mainPage.clickCreateNewPasteButton();
         newPastePage.fullTextCheck(pasteTitleName, expirationType, codeToPast);
     }
