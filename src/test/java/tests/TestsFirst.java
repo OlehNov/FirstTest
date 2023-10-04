@@ -6,13 +6,11 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.WebElement;
 
 public class TestsFirst extends Variables {
-////
+
     String newPaste = "Hello from WebDrive";
     String pasteTitleName = "helloweb";
-    WebElement pasteExpiration = mainPage.pasteExpirationTenMinutesOption;
 
     @Before
     public void setUp(){
@@ -21,8 +19,7 @@ public class TestsFirst extends Variables {
 
     @Test
     public void createNewPaste(){
-        mainPage.createPasteTenMinutes(newPaste,pasteTitleName,pasteExpiration);
-        mainPage.clickCreateNewPasteButton();
+        mainPage.createPasteTenMinutes(newPaste,pasteTitleName);
         String actualResult = newPastePage.readNewPasteTitle();
         Assert.assertEquals("Unexpected result:", pasteTitleName, actualResult);
     }
