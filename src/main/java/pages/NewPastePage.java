@@ -12,7 +12,7 @@ import java.time.Duration;
 public class NewPastePage extends Base {
 
     //CSS
-    @FindBy(css = ".top-buttons .left > :first-child")
+    @FindBy(css = ".top-buttons .left>a[class^=\"btn -small h_800\"]")
     private WebElement pasteExpirationType;
     @FindBy(css = ".info-bar .info-top>h1")
     private WebElement pasteTitle;

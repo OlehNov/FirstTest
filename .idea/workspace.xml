@@ -4,45 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ae98bf1d-7bdf-4311-9864-ca0979c751c6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/base/Variables.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pages/NewPastePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/TestsSecond.java" afterDir="false" />
+    <list default="true" id="95a8c7dd-712a-418c-af47-3c9e4a2159aa" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/base/Base.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/base/Base.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/MainPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/NewPastePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/NewPastePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/TestsFirst.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/TestsFirst.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/TestsSecond.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/TestsSecond.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/pages/NewPastePage.java" root0="SKIP_INSPECTION" />
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
   </component>
-  <component name="ProjectId" id="2Vss83poTJOUrmKQnCZZa1LC5IW" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="2WJBonvHaAbYOZery94UyAJV5QW" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/olegn/IdeaProjects/test-sorting&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -56,29 +50,13 @@
       <module name="tasks_webdriver" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="testBase.*" />
+          <option name="PATTERN" value="tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.TestsFirst" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestsFirst.createNewPaste" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="tasks_webdriver" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="testBase.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.TestsFirst" />
-      <option name="METHOD_NAME" value="createNewPaste" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -102,38 +80,25 @@
       <list>
         <item itemvalue="JUnit.TestsSecond" />
         <item itemvalue="JUnit.TestsFirst" />
-        <item itemvalue="JUnit.TestsFirst.createNewPaste" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ae98bf1d-7bdf-4311-9864-ca0979c751c6" name="Changes" comment="" />
-      <created>1695635960362</created>
+      <changelist id="95a8c7dd-712a-418c-af47-3c9e4a2159aa" name="Changes" comment="" />
+      <created>1696440982699</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1695635960362</updated>
-      <workItem from="1695635961387" duration="1000" />
-      <workItem from="1695666217090" duration="27163000" />
-      <workItem from="1695798066732" duration="1220000" />
-      <workItem from="1695925969326" duration="5000" />
-      <workItem from="1695970319786" duration="51443000" />
+      <updated>1696440982699</updated>
+      <workItem from="1696440984264" duration="231000" />
+      <workItem from="1696441407516" duration="20000" />
+      <workItem from="1696441495642" duration="467000" />
+      <workItem from="1696441996466" duration="1503000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
 </project>

@@ -23,12 +23,12 @@ public class MainPage extends Base {
     private WebElement pasteNameField;
     @FindBy(css=".form-group.form-btn-container .btn")
     private WebElement createNewPasteButton;
-    @FindBy(css = " .select2-results__options :nth-child(3)")
-    private WebElement pasteExpirationTenMinutesOption;
+    @FindBy(xpath = "//li[text()=\"10 Minutes\"]")
+    public WebElement pasteExpirationTenMinutesOption;
     @FindBy(css=".form-group.field-postform-format .select2-selection__arrow")
     private WebElement highlighting;
-    @FindBy(css = ".select2-results__options.select2-results__options--nested > :first-child")
-    private WebElement bashHighlighting;
+    @FindBy(xpath = "(//li[contains(text(), 'Bash')])[1]")
+    public WebElement bashHighlighting;
 
     public MainPage(WebDriver driver){
         super(driver);
@@ -48,9 +48,9 @@ public class MainPage extends Base {
         System.out.println("Button was clicked success");
     }
 
-    public void tenMinutesOptionClick(){
-       wait.until(ExpectedConditions.elementToBeClickable(pasteExpirationTenMinutesOption)).click();
-        System.out.println("Ten minutes option was clicked success");
+    public void tenMinutesOptionClick(WebElement pasteExpiration){
+       wait.until(ExpectedConditions.elementToBeClickable(pasteExpiration)).click();
+        System.out.println("Paste expiration option was clicked success");
     }
 
     public void enterTitleNameText(String titleName){
@@ -68,31 +68,25 @@ public class MainPage extends Base {
         System.out.println("Highlighting button was clicked success");
     }
 
-    public void bashHighlightingClick(){
-        wait.until(ExpectedConditions.elementToBeClickable(bashHighlighting)).click();
-        System.out.println("Bash option was clicked success");
+    public void bashHighlightingClick(WebElement syntax){
+        wait.until(ExpectedConditions.elementToBeClickable(syntax)).click();
+        System.out.println("Syntax option was clicked success");
     }
-
-
 
     //
-    public void createPasteTenMinutes(String newPaste, String pasteTitleName){
+    public void createPasteTenMinutes(String newPaste, String pasteTitleName, WebElement pasteExpiration){
         MainPage mainPage = new MainPage(driver);
         mainPage.enterNewPasteText(newPaste);
         mainPage.pasteExpirationClick();
-        mainPage.tenMinutesOptionClick();
+        mainPage.tenMinutesOptionClick(pasteExpiration);
         mainPage.enterTitleNameText(pasteTitleName);
-        mainPage.clickCreateNewPasteButton();
     }
 
-    public void createPasteBashTenMinutes(String newPaste, String pasteTitleName){
+    public void createPasteBashTenMinutes(String newPaste, String pasteTitleName,WebElement pasteExpiration,
+                                          WebElement syntax){
         MainPage mainPage = new MainPage(driver);
-        mainPage.enterNewPasteText(newPaste);
         mainPage.syntaxHighlightingClick();
-        mainPage.bashHighlightingClick();
-        mainPage.pasteExpirationClick();
-        mainPage.tenMinutesOptionClick();
-        mainPage.enterTitleNameText(pasteTitleName);
-        mainPage.clickCreateNewPasteButton();
+        mainPage.bashHighlightingClick(syntax);
+        createPasteTenMinutes(newPaste,pasteTitleName,pasteExpiration);
     }
 }
