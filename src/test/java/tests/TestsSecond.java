@@ -1,31 +1,39 @@
 package tests;
 
-import base.Base;
 import base.Variables;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import pages.MainPage;
+import pages.NewPastePage;
 
+public class TestsSecond{
 
-public class TestsSecond extends Variables {
-
-    String codeToPast = """
-            git config --global user.name  "New Sheriff in Town"
-            git reset $(git commit-tree HEAD^{tree} -m "Legacy code")
-            git push origin master --force""";
-    String pasteTitleName = "how to gain dominance among developers";
-    String expirationType = "Bash";
+    public WebDriver driver = new ChromeDriver();
+    public MainPage mainPage = new MainPage(driver);
+    public NewPastePage newPastePage = new NewPastePage(driver);
 
     @Before
-    public void setUp(){driver.get(Base.mainPageURL);}
+    public void setUp(){driver.get(Variables.MAIN_PAGE_URL);}
+
     @Test
-
     public void creatAndCheckNewPaste(){
-        mainPage.createPasteBashTenMinutes(codeToPast,pasteTitleName);
+        mainPage.createPasteAndCheck(Variables.CODE_TO_PAST, Variables.PASTE_TITLE_SECOND, Variables.TIME, Variables.EXPIRATION_TYPE);
         mainPage.clickCreateNewPasteButton();
-        newPastePage.fullTextCheck(pasteTitleName, expirationType, codeToPast);
-    }
 
+        String browserTitle = driver.getTitle();
+        String expectSyntax = newPastePage.readExpirationType();
+        String expectTitle = newPastePage.readNewPasteTitle();
+        String expectCodeToPast = newPastePage.readTextField();
+
+        Assert.assertEquals("Unexpected syntax", Variables.EXPIRATION_TYPE,expectSyntax);
+        Assert.assertEquals("Unexpected text", Variables.CODE_TO_PAST, expectCodeToPast);
+        Assert.assertTrue("Unexpected title",browserTitle.contains(expectTitle));
+    }
+    
     @After
     public void end(){
         driver.quit();
