@@ -57,6 +57,7 @@ public class MainPage extends Base {
         System.out.println("Highlighting button was clicked success");
     }
 
+
     //Time slots in drop_down list
     public void xpath(String locator, String value){
         String xpath = String.format(locator, value);
@@ -75,5 +76,5 @@ public class MainPage extends Base {
         syntaxDropDownClick();
         xpath(SYNTAX, highlighting);
         createPaste(newPaste,pasteTitleName,time);
-    }
+  }
 }

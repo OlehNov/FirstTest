@@ -10,6 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import pages.MainPage;
 import pages.NewPastePage;
 
+
 public class TestsSecond{
 
     public WebDriver driver = new ChromeDriver();
@@ -20,7 +21,7 @@ public class TestsSecond{
     public void setUp(){driver.get(Variables.MAIN_PAGE_URL);}
 
     @Test
-    public void creatAndCheckNewPaste(){
+    public void createAndCheckNewPaste(){
         mainPage.createPasteAndCheck(Variables.CODE_TO_PAST, Variables.PASTE_TITLE_SECOND, Variables.TIME, Variables.EXPIRATION_TYPE);
         mainPage.clickCreateNewPasteButton();
 
