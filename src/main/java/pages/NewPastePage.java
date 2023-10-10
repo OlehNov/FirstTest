@@ -19,13 +19,10 @@ public class NewPastePage extends Base {
     @FindBy(css=".highlighted-code .source>ol")
     private WebElement pasteTextField;
 
-
     public NewPastePage(WebDriver driver){
         super(driver);
         PageFactory.initElements(driver, this);
     }
-
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
     public String readNewPasteTitle(){
         return wait.until(ExpectedConditions.elementToBeClickable(pasteTitle)).getText();
@@ -37,26 +34,5 @@ public class NewPastePage extends Base {
 
     public String readTextField(){
         return wait.until(ExpectedConditions.elementToBeClickable(pasteTextField)).getText();
-    }
-
-    public void fullTextCheck(String pasteTitle, String pasteExpirationType, String pasteTextField){
-        NewPastePage check = new NewPastePage(driver);
-        boolean titleCorrect = readNewPasteTitle().equals(pasteTitle);
-        boolean expirationTypeCorrect = readExpirationType().equals(pasteExpirationType);
-        boolean textFieldCorrect =  readTextField().equals(pasteTextField);
-        if (titleCorrect && expirationTypeCorrect && textFieldCorrect){
-            System.out.println("All fields are correct");
-        } else {
-            if (!titleCorrect){
-                System.out.println("WARNING:Title is incorrect");
-            }
-            if (!expirationTypeCorrect){
-                System.out.println("WARNING:ExpirationType is incorrect");
-            }
-            if(!textFieldCorrect){
-                System.out.println("WARNING:TextField is incorrect");
-            }
-        }
-
     }
 }
